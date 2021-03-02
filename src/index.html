@@ -1,13 +1,199 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
   </head>
   <body>
-     <h1>Giuliana</h1>
-    <div id="root"></div>
+    <div id="root" class="root">
+      <header class="container__header">
+        <a href="#" class="container__header-text">pokéDex</a>
+        <img
+          src="./img/Sin título-2.png"
+          width="240.3"
+          height="118.66"
+          alt=""
+        />
+        <a href="#" class="container__header-text">Histograma</a>
+      </header>
+      <main class="container__main">
+        <section class="container__main-left">
+          <section class="main__left-light">
+            <canvas class="lightBlue"></canvas>
+            <section class="lights">
+              <canvas class="lightRed"></canvas>
+              <canvas class="lightYellow"></canvas>
+              <canvas class="lightGreen"></canvas>
+            </section>
+          </section>
+          <section class="main__left-info"></section>
+        </section>
+        <section class="container__main-right">
+          <section class="main__right-search" multi>
+            <select name="" id="" class="typePokemon btnFilter">
+              <option value="all" >All</option>
+              <optgroup label="TYPE" id="filterType">
+                <option value="bug">Bug</option>
+                <option value="dark">Dark</option>
+                <option value="dragon">Dragon</option>
+                <option value="electric">Electric</option>
+                <option value="fairy">Fairy</option>
+                <option value="fighting">Fighting</option>
+                <option value="fire">Fire</option>
+                <option value="flying">Flying</option>
+                <option value="ghost">Ghost</option>
+                <option value="grass">Grass</option>
+                <option value="ground">Ground</option>
+                <option value="ice">Ice</option>
+                <option value="normal">Normal</option>
+                <option value="poison">Poison</option>
+                <option value="psychic">Psychic</option>
+                <option value="rock">Rock</option>
+                <option value="steel">Steel</option>
+                <option value="water">Water</option>
+              </optgroup>
+              <optgroup label="WEAKNESSES" id="filterWeaknesses">
+                <option value="bug">Bug</option>
+                <option value="dark">Dark</option>
+                <option value="dragon">Dragon</option>
+                <option value="electric">Electric</option>
+                <option value="fairy">Fairy</option>
+                <option value="fighting">Fighting</option>
+                <option value="fire">Fire</option>
+                <option value="flying">Flying</option>
+                <option value="ghost">Ghost</option>
+                <option value="grass">Grass</option>
+                <option value="ground">Ground</option>
+                <option value="ice">Ice</option>
+                <option value="poison">Poison</option>
+                <option value="psychic">Psychic</option>
+                <option value="rock">Rock</option>
+                <option value="steel">Steel</option>
+                <option value="water">Water</option>
+              </option>
+              </optgroup>
+              <optgroup label="RESISTANT" id="filterResistant">
+                <option value="bug">Bug</option>
+                <option value="dark">Dark</option>
+                <option value="dragon">Dragon</option>
+                <option value="electric">Electric</option>
+                <option value="fairy">Fairy</option>
+                <option value="fighting">Fighting</option>
+                <option value="fire">Fire</option>
+                <option value="flying">Flying</option>
+                <option value="ghost">Ghost</option>
+                <option value="grass">Grass</option>
+                <option value="ground">Ground</option>
+                <option value="ice">Ice</option>
+                <option value="normal">Normal</option>
+                <option value="poison">Poison</option>
+                <option value="psychic">Psychic</option>
+                <option value="rock">Rock</option>
+                <option value="steel">Steel</option>
+                <option value="water">Water</option>
+              </optgroup>
+              <option value="" selected></option>
+            </select>
+            <div class="inputSearch">
+              <img src="./img/search.png" />
+              <input type="text" placeholder="Search pokemon" />
+            </div>
+            <div>
+              <button class="btnUp"></button>
+              <button class="btnDown"></button>
+            </div>
+          </section>
+          <section class="main__right-list">
+            <section class="right-list-card" id="pokemonList"></section>
+            <!-- <div class="right__list-ul">
+              <ul class="right__ul">
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+              </ul>
+              <ul class="right__ul">
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+              </ul>
+              <ul class="right__ul">
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+                <li class="right__ul-li">
+                  <p>#001</p>
+                  <img
+                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
+                    alt=""
+                  />
+                  <span>Nombre</span>
+                </li>
+              </ul>
+            </div> -->
+            <div class="right_btn">
+              <button class="btnLeft" id="previousButton"></button>
+              <button class="btnRigth" id="nextButton"></button>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
     <script src="main.js" type="module"></script>
   </body>
 </html>

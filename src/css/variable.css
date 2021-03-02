@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Share+Tech&display=swap');
+
+:root{
+    /* Type of letter */
+    --share: 'Share Tech', sans-serif;
+    --arimo: 'Arimo', sans-serif;
+
+    /* Type of colors background */
+    --green-dark: linear-gradient(180deg, #32FFF3 0%, rgba(165, 255, 250, 0.438756) 6.25%, rgba(98, 255, 246, 0.76464) 22.92%, rgba(202, 255, 252, 0.260417) 80.21%, rgba(255, 255, 255, 0) 91.67%), #80CBC4;
+    --yellow-light: rgba(255, 235, 59, 0.3);
+    --red:rgb(209, 38, 38);
+    --red-light:rgba(239, 117, 117, 0.22);
+    --gray:linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), rgba(196, 196, 196, 0.8);
+    --gray-light:rgba(253, 237, 237, 0.3);
+    --green: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), rgba(35, 193, 89, 0.6);
+    --yellow: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%), rgba(241, 244, 61, 0.6);
+    --red-radial:radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), rgba(240, 63, 24, 0.8);
+    --blue-light: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #38C1DF;
+}

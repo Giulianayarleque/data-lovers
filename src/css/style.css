@@ -1,0 +1,18 @@
+@import url('./variable.css');
+@import url('./home.css');
+
+/* Reset */
+*{
+margin:0;
+box-sizing:border-box;
+padding:0;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    font-family: var(--share);
+}
+
