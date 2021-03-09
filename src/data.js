@@ -72,3 +72,5 @@ export const listResistantPokemon = (dataPokemon) => {
   // console.log(arrayListResistantPokemon);
   return arrayListResistantPokemon
 }
+
+

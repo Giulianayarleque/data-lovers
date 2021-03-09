@@ -2,9 +2,11 @@ import {
   filterPokemonsByType,
   filterPokemonByWeakness,
   filterPokemonByResistant,
+  //filterDataByName,
   listTypesPokemon,
   listWeaknessPokemon,
   listResistantPokemon,
+  
 } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
@@ -53,25 +55,25 @@ const previousNavigationPage = (data) => {
 };
 
 const filterPokemons = (e) => {
-  console.log(e.target.selectedIndex);
+  //console.log(e.target.selectedIndex);
   // console.log(e.target.length);
   debugger;
   if (e.target.selectedIndex < 19) {
-    console.log(filterType.label);
-    console.log(typePokemon.value);
+    //console.log(filterType.label);
+    //console.log(typePokemon.value);
     dataPoke = filterPokemonsByType(typePokemon, getPokemons);
   } else if (e.target.selectedIndex < 36) {
-    console.log(filterWeaknesses.label);
-    console.log(typePokemon.value);
+    //console.log(filterWeaknesses.label);
+    //console.log(typePokemon.value);
     dataPoke = filterPokemonByWeakness(typePokemon, getPokemons);
   } else if (e.target.selectedIndex < 54) {
     console.log(filterResistant.label);
-    console.log(typePokemon.value);
+    //console.log(typePokemon.value);
     dataPoke = filterPokemonByResistant(typePokemon, getPokemons);
   } else {
-    console.log("error");
+   // console.log("error");
   }
-  console.log(dataPoke);
+  //console.log(dataPoke);
 
   // dataPoke = filterPokemonsByType(typePokemon, getPokemons);
   // dataPoke = filterPokemonByWeakness(typePokemon, getPokemons);
@@ -104,7 +106,7 @@ const showPokemons = (pokemonData) => {
   const ulPokemon = document.querySelectorAll("ul");
   ulPokemon.forEach((e) => {
     e.addEventListener("click", () => {
-      console.log(`Hola pokemon`);
+     // console.log(`Hola pokemon`);
     });
   });
 };
@@ -135,11 +137,10 @@ const sortUp = (dataUp) => {
   });
   return dataUp*/
  //console.log('Click aquí')
- console.log(dataUp)
+ //console.log(dataUp)
 }
   //downUp(dataInput)
  //console.log(sortUp(dataPoke))
-
  const sortDown = (dataDown) => {
   /*dataDown.sort(function (a, b) {
     if (a.num > b.num) {
@@ -153,12 +154,43 @@ const sortUp = (dataUp) => {
   });
   return dataDown*/
   //console.log('click')
-  console.log(dataDown)
+  //console.log(dataDown)
 }
   //sortUp(dataInput)
 // console.log(sortDown(dataPoke))
-
-
  //event of button up/down 
-upButton.addEventListener("click", () => sortUp(dataPoke));
-downButton.addEventListener("click", () => sortDown(dataPoke));
+//upButton.addEventListener("click", () => sortUp(dataPoke));
+//downButton.addEventListener("click", () => sortDown(dataPoke));
+
+/*let text = document.getElementById('searchText')
+
+text.addEventListener("keyup",filtrarTexto);
+function limpiarLista(lista){
+  while(lista.firstchild){
+			lista.removeChild(dataPoke.firstChild);
+  }}*/
+
+const searchInput = document.querySelector('#searchText');
+
+ searchInput.addEventListener('keyup', () => {
+  //console.log(searchInput.value.toLowerCase())
+  if (searchInput.value.toLowerCase() === "all") {
+    return dataPoke;
+  } else {
+    const dataCondition = dataPoke.filter((poke) => {
+      return poke.name.startsWith(searchInput.value.toLowerCase()); 
+    } );
+    console.log(dataCondition)
+    return dataCondition
+  }
+})
+  //console.log(pokemonSearch)
+ /* if (pokemonSearch.length === 0){
+    typePokemon.innerHTML = `<p>Sin Resultados</p>`;
+  } else {
+    //console.log(`Ingreso`)
+    tipePokemon.innerHTML = '';
+    showPokemons(pokemonSearch);
+    
+  }*/
+
