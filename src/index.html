@@ -27,7 +27,8 @@
               <canvas class="lightGreen"></canvas>
             </section>
           </section>
-          <section class="main__left-info"></section>
+          <section class="main__left-info" id="infoPokemon">
+          </section>
         </section>
         <section class="container__main-right">
           <section class="main__right-search" multi>
@@ -97,95 +98,16 @@
             </select>
             <div class="inputSearch">
               <img src="./img/search.png" />
-              <input type="text" id="searchText"  placeholder="Search pokemon" />
+              <input type="text" id="searchText" placeholder="Search pokemon" />
             </div>
             <div>
-              <button class="btnUp"></button>
-              <button class="btnDown"></button>
+              <button class="btnUp" id="upButton"></button>
+              <button class="btnDown" id="downButton"></button>
             </div>
           </section>
           <section class="main__right-list">
-            <section class="right-list-card" id="pokemonList"></section>
-            <!-- <div class="right__list-ul">
-              <ul class="right__ul">
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-              </ul>
-              <ul class="right__ul">
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-              </ul>
-              <ul class="right__ul">
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-                <li class="right__ul-li">
-                  <p>#001</p>
-                  <img
-                    src="https://www.serebii.net/pokemongo/pokemon/001.png"
-                    alt=""
-                  />
-                  <span>Nombre</span>
-                </li>
-              </ul>
-            </div> -->
+            <section class="right-list-card" id="pokemonList">
+            </section>
             <div class="right_btn">
               <button class="btnLeft" id="previousButton"></button>
               <button class="btnRigth" id="nextButton"></button>
