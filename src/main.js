@@ -3,6 +3,7 @@ import {
   filterPokemonByWeakness,
   filterPokemonByResistant,
   listTypesPokemon,
+  sortData,
   listWeaknessPokemon,
   listResistantPokemon,
   top10PokemonByCp,
@@ -20,6 +21,12 @@ const infoPokemon = document.getElementById("infoPokemon");
 const searchText = document.getElementById("searchText");
 const upButton = document.getElementById("upButton")
 const downButton = document.getElementById("downButton")
+// Modal top 10 
+const btnOpenTop10 = document.getElementById("btnOpenTop10")
+const btnClosePopup = document.getElementById("btnClosePopup")
+const modal = document.getElementById("modal")
+const popup = document.getElementById("popup")
+const popupCard = document.getElementById("card")
 
 // Solo para pruebas
 const fiterType = document.querySelector("#filterType");
@@ -33,7 +40,26 @@ let dataPoke = getPokemons;
 let cp1 = 0;
 let cp2 = 9;
 
-top10PokemonByCp(dataPoke);
+const renderModalTop10 = (dataTop10Poke) =>{
+  console.log(dataTop10Poke);
+  popupCard.innerHTML=""
+  dataTop10Poke.forEach((poke)=>{
+    let li = document.createElement("li")
+    li.classList.add("card-top10")
+    li.innerHTML=`
+    <figure>
+      <img src=${poke.img} alt="">
+    </figure>
+    <p>${poke.name}</p>
+    <p>Max-cp: ${poke.stats["max-cp"]}</p>
+    `
+    popupCard.appendChild(li)
+  })
+  
+}
+
+
+
 
 //Function to render information pokemon
 const renderInfoPokemonInit = () => {
@@ -124,6 +150,7 @@ const previousNavigationPage = (data) => {
 };
 
 const filterPokemons = (e) => {
+  
   e.target.selectedIndex < 19
     ? (dataPoke = filterPokemonsByType(typePokemon, getPokemons))
     : e.target.selectedIndex < 36
@@ -142,14 +169,17 @@ const searchPokemon = () =>{
   previousPage(dataPoke);
 }
 
-const sortUp = (data) =>{
-  console.log(`click`);
+const sortUp = (data, sortOrderValue) =>{
+  dataPoke = sortData(data,sortOrderValue)
+  nextPage(dataPoke);
+  previousPage(dataPoke);
 }
 
-const sortDown = (data) =>{
-  console.log(`clik Down`);
+const sortDown = (data, sortOrderValue) =>{
+  dataPoke = sortData(data,sortOrderValue)
+  nextPage(dataPoke);
+  previousPage(dataPoke);
 }
-
 
 
 const showPokemons = (pokemonData) => {
@@ -178,9 +208,9 @@ const showPokemons = (pokemonData) => {
 showPokemons(dataPoke.slice(cp1, cp2));
 
 // Evento Click UP
-upButton.addEventListener("click", () => sortUp(dataPoke) )
+upButton.addEventListener("click", () => sortUp(dataPoke, upButton) )
 // Evento Click Down 
-downButton.addEventListener("click", () => sortDown(dataPoke))
+downButton.addEventListener("click", () => sortDown(dataPoke, downButton))
 // Event Change
 typePokemon.addEventListener("change", filterPokemons);
 // Event keyUP
@@ -191,3 +221,17 @@ nextButton.addEventListener("click", () => nextNavigationPage(dataPoke));
 previousButton.addEventListener("click", () =>
   previousNavigationPage(dataPoke)
 );
+
+// EVENTO MODAL
+btnOpenTop10.addEventListener("click", ()=>{
+  // console.log("Click 10");
+  modal.classList.add("active")
+  popup.classList.add("active")
+  renderModalTop10(top10PokemonByCp(dataPoke))
+})
+
+btnClosePopup.addEventListener("click", () => {
+  // console.log("cerrar");
+  modal.classList.remove("active")
+  popup.classList.remove("active")
+})

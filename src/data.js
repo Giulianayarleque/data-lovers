@@ -77,26 +77,40 @@ export const listResistantPokemon = (dataPokemon) => {
 
 export const top10PokemonByCp = (dataPokemon) => {
   // const arrayCp = dataPokemon.map((e)=> e.stats["max-cp"])
-  const arrayCpOrder = dataPokemon.sort((a,b)=> b.stats["max-cp"]-a.stats["max-cp"])
-  const top10CpMax = arrayCpOrder.slice(0,10)
-  console.log(top10CpMax);
-  
+  const arrayCpOrder = dataPokemon.sort(
+    (a, b) => b.stats["max-cp"] - a.stats["max-cp"]
+  );
+  const top10CpMax = arrayCpOrder.slice(0, 10);
+  // console.log(top10CpMax);
+  return top10CpMax
 };
 
-export const searchPokemonByName = (searchInput, dataPokemon) =>{
-  // toLowerCase() => Metodo de string para convertir el input a minusculas 
+export const searchPokemonByName = (searchInput, dataPokemon) => {
+  let inputValue = searchInput.value.toLowerCase();
 
-  let inputValue = searchInput.value.toLowerCase()
-  if (inputValue=== "all") {
-    return dataPokemon
-  }else{
-    const dataFilterByText = dataPokemon.filter((poke)=>{
-      
-      return poke.name.startsWith(inputValue)
-    })
-    console.log(dataFilterByText);
-    return dataFilterByText
+  if (inputValue === "all") {
+    return dataPokemon;
+  } else {
+    const dataFilterByText = dataPokemon.filter((poke) => {
+      return poke.name.startsWith(inputValue);
+    });
+
+    return dataFilterByText;
   }
-}
+};
 
+export const sortData = (dataPokemon, sortOrder) => {
+  // console.log(dataPokemon ,sortOrder.value);
+  let dataValue = sortOrder.value;
 
+  if (dataValue === "btnup") {
+    // console.log(dataPokemon.sort((a,b)=>a.num - b.num));
+    return dataPokemon.sort((a,b)=>a.num - b.num)
+  }
+
+  if (dataValue === "btndown") {
+    // console.log(dataPokemon.sort((a,b)=>b.num - a.num));
+    return dataPokemon.sort((a,b)=>b.num - a.num)
+  }
+  //
+};

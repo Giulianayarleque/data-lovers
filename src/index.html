@@ -8,7 +8,7 @@
   <body>
     <div id="root" class="root">
       <header class="container__header">
-        <a href="#" class="container__header-text">pokéDex</a>
+        <a href="#" class="container__header-text" id="btnOpenTop10">poke10</a>
         <img
           src="./img/Sin título-2.png"
           width="240.3"
@@ -101,8 +101,8 @@
               <input type="text" id="searchText" placeholder="Search pokemon" />
             </div>
             <div>
-              <button class="btnUp" id="upButton"></button>
-              <button class="btnDown" id="downButton"></button>
+              <button class="btnUp" id="upButton" value="btnup"></button>
+              <button class="btnDown" id="downButton" value="btndown"></button>
             </div>
           </section>
           <section class="main__right-list">
@@ -116,6 +116,86 @@
         </section>
       </main>
     </div>
+    <section id="modal" class="modal">
+      <article id="popup"class="popup">
+        <a href="#" id="btnClosePopup" class="btn-close-popup">x</a>
+        <section class="modal__container-top10">
+          <h3> TOP 10 POKEMON WITH MAX-CP </h3>
+             <ul class="container__card" id="card">
+              <!--<li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li>
+              <li class="card-top10">
+                <figure>
+                  <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="">
+                </figure>
+                <p>nombre</p>
+                <p>Max-cp: 4187</p>
+              </li> -->
+            </ul>
+        </section>
+      </article>
+    </section>
     <script src="main.js" type="module"></script>
   </body>
 </html>
