@@ -77,13 +77,20 @@
     background: rgb(197, 120, 126);
     color: #f3cfc5;
     cursor: pointer;
-    
+      
 }
 
 .card-top10 img{
     width: 120px;
     height: 143px;
+    
+}
 
+.card-top10 img:hover{
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
 }
 
 .card-top10 p {
